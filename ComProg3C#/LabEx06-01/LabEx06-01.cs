@@ -5,29 +5,29 @@ namespace StudentNamespace
     public class studentInfo
     {
         private string studentID;
-        private string fname;
-        private string lname;
+        private string firstName;
+        private string lastName;
 
         public studentInfo()
         {
-            Console.WriteLine("Student Created With no info");
+            Console.WriteLine("Student created with no info.");
         }
 
         public studentInfo(string studentID, string fname, string lname)
         {
             this.studentID = studentID;
-            this.fname = fname;
-            this.lname = lname;
+            this.firstName = fname;
+            this.lastName = lname;
 
-            Console.WriteLine("Student Created");
+            Console.WriteLine("Student Created.");
         }
 
         public studentInfo(string fname, string lname)
         {
-            this.fname = fname;
-            this.lname = lname;
+            this.firstName = fname;
+            this.lastName = lname;
 
-            Console.WriteLine("Student Created with no id");
+            Console.WriteLine("Student created with no id.");
         }
 
 
@@ -43,24 +43,24 @@ namespace StudentNamespace
             return studentID;
         }
 
-        public void setFname(string fname)
+        public void setFirstname(string fname)
         {
-            this.fname = fname;
+            this.firstName = fname;
         }
 
-        public string getFname()
+        public string getFirstname()
         {
-            return fname;
+            return firstName;
         }
 
-        public void setLname(string lname)
+        public void setLastname(string lname)
         {
-            this.lname = lname;
+            this.lastName = lname;
         }
 
-        public string getLname()
+        public string getLastname()
         {
-            return lname;
+            return lastName;
         }
     }
 
@@ -68,30 +68,31 @@ namespace StudentNamespace
     {
         public static void Main(string[] args)
         {
-
-            studentInfo student1 = new studentInfo("Matthew", "Molina");
-            studentInfo student2 = new studentInfo("123456", "Nicole", "Angela");
+            studentInfo student1 = new studentInfo("123456", "Nicole", "Angela");
+            studentInfo student2 = new studentInfo("Matthew", "Molina");
             studentInfo student3 = new studentInfo();
 
             Console.WriteLine();
 
-            student1.setStudentID("100101");
+            student2.setStudentID("100101");
 
             student3.setStudentID("098765");
-            student3.setFname("Tite");
-            student3.setLname("Burat");
+            student3.setFirstname("Jack");
+            student3.setLastname("Roberto");
 
-            Console.WriteLine("Name : " + student1.getFname() + " " + student1.getLname());
-            Console.WriteLine("Id   : " + student1.getStudentID());
-
-            Console.WriteLine("Name : " + student2.getFname() + " " + student2.getLname());
-            Console.WriteLine("Id   : " + student2.getStudentID());
-
-            Console.WriteLine("Name : " + student3.getFname() + " " + student3.getLname());
-            Console.WriteLine("Id   : " + student3.getStudentID());
-
-
+            Console.WriteLine("\nStudents List: \n");
+            printInfo(student1);
+            printInfo(student2);
+            printInfo(student3);
 
         }
+
+        static void printInfo(studentInfo student)
+        {
+            Console.WriteLine("Student ID : " + student.getStudentID());
+            Console.WriteLine("First Name : " + student.getFirstname());
+            Console.WriteLine("Last Name  : " + student.getLastname() + "\n");
+        }
+
     }
 }
