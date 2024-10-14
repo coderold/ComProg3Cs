@@ -55,7 +55,7 @@ namespace ItemNamespace
 
         public double getChange()
         {
-            return this.change = this.payment_amount;
+            return this.change = this.payment_amount - getTotalPrice();
         }
     }
 
@@ -64,7 +64,7 @@ namespace ItemNamespace
         public static void Main(string[] args)
         {
             Console.WriteLine("hello setup");
-            Item item = new DiscountedItem("keyb", 799.50, 6, 32);
+            DiscountedItem item = new DiscountedItem("keyb", 799.50, 6, 32);
 
             item.setPayment(4000);
             Console.WriteLine("Change: " + item.getChange());
