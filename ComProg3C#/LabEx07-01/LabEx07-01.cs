@@ -18,13 +18,15 @@ namespace ItemNamespace
 
         public virtual double getTotalPrice()
         {
-            return 0;
+            return total_price = item_price * item_quantity;
         }
 
         public virtual void setPayment(double amount)
         {
-
+            //overided this method.
         }
+
+     
     }
 
     public class DiscountedItem : Item
@@ -36,22 +38,24 @@ namespace ItemNamespace
 
         public DiscountedItem(string name, double price, int quantity, double discount) : base (name, price, quantity)
         {
-            
+            this.item_discount = (discount * 0.01) * price;
+            this.discounted_price = price - this.item_discount;
+
         }
 
         public override double getTotalPrice()
         {
-            return base.getTotalPrice();
+            return discounted_price * item_quantity;
         }
 
         public override void setPayment(double amount)
         {
-            base.setPayment(amount);
+            this.payment_amount = amount;
         }
 
         public double getChange()
         {
-            return change;
+            return this.change = this.payment_amount;
         }
     }
 
@@ -60,6 +64,10 @@ namespace ItemNamespace
         public static void Main(string[] args)
         {
             Console.WriteLine("hello setup");
+            Item item = new DiscountedItem("keyb", 799.50, 6, 32);
+
+            item.setPayment(4000);
+            Console.WriteLine("Change: " + item.getChange());
         }
     }
 }
