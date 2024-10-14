@@ -6,7 +6,7 @@
     <RootNamespace>ComProg3C_</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>UserAccountNamespace.MainClass</StartupObject>
+    <StartupObject>EmployeeNamespace2.MainClass</StartupObject>
   </PropertyGroup>
 
 </Project>
