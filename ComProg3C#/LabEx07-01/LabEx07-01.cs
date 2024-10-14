@@ -63,11 +63,30 @@ namespace ItemNamespace
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("hello setup");
-            DiscountedItem item = new DiscountedItem("keyb", 799.50, 6, 32);
+            String name;
+            int discount, quantity;
+            double price;
 
+            Console.WriteLine("Purchase Discounted Item.\n");
+
+            Console.Write("Item     : ");
+            name = Console.ReadLine();
+
+            Console.Write("Discount : ");
+            discount = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Price    : ");
+            price = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Quantity : ");
+            quantity = Convert.ToInt32(Console.ReadLine());
+
+            DiscountedItem item = new DiscountedItem(name, price, quantity, discount);
             item.setPayment(4000);
-            Console.WriteLine("Change: " + item.getChange());
+
+            Console.WriteLine("\nTotal amount : " + item.getTotalPrice());
+            Console.WriteLine("Change       : " + item.getChange());
+
         }
     }
 }
