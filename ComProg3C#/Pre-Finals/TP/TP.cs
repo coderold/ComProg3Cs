@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace CalculatorNamespace
 {
@@ -27,20 +26,11 @@ namespace CalculatorNamespace
 
         public void doAllOperations(double num1, double num2)
         {
-            Loading();
+            Console.WriteLine("\nResult : ");
             Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
             Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
             Console.WriteLine($"{num1} x {num2} = {num1 * num2}");
             Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
-        }
-        public void Loading()
-        {
-            Console.Write("\nCalculating");
-            for (int i = 0; i < 3; i++)
-            {
-                Thread.Sleep(500);
-                Console.Write(" . ");
-            }
         }
 
         public void Calculate(double num1, double num2)
