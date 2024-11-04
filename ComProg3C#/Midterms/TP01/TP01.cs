@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace EmployeeInterface{
+namespace ComProg3C_.Midterms.TP01
+{
     public interface IEmployee
     {
         public string FirstName { get; set; }
@@ -13,9 +14,9 @@ namespace EmployeeInterface{
     }
 }
 
-namespace EmployeeNamespace2   
+namespace EmployeeNamespace2
 {
-    using EmployeeInterface;
+    using ComProg3C_.Midterms.TP01;
     public class PartTimeEmployee : IEmployee
     {
         public string FirstName { get; set; }
@@ -48,7 +49,7 @@ namespace EmployeeNamespace2
     {
         public static void Main(string[] args)
         {
-            String FName, LName, Dept, Job;
+            string FName, LName, Dept, Job;
             int hoursWorked;
             double ratePerHour;
 
