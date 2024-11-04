@@ -6,7 +6,7 @@ namespace CalculatorNamespace
     {
         public static void Main(string[] args)
         {
-            Calculator calculator = new Calculator();
+            CalculatorClass cal = new CalculatorClass();
 
             Console.Write("Enter first number  : ");
             double num1 = Convert.ToDouble(Console.ReadLine());
@@ -14,15 +14,15 @@ namespace CalculatorNamespace
             Console.Write("Enter second number : ");
             double num2 = Convert.ToDouble(Console.ReadLine());
 
-            calculator.Calculate(num1, num2);
+            cal.Calculate(num1, num2);
         }
     }
 
-    public class Calculator
+    public class CalculatorClass
     {
-        public delegate void CalculatorHandler (double num1, double num2);
+        public delegate void Formula (double num1, double num2);
 
-        public event CalculatorHandler Calculated;
+        public event Formula CalculateEvent;
 
         public void doAllOperations(double num1, double num2)
         {
@@ -35,12 +35,12 @@ namespace CalculatorNamespace
 
         public void Calculate(double num1, double num2)
         {
-            Calculated?.Invoke(num1, num2);
+            CalculateEvent?.Invoke(num1, num2);
         }
 
-        public Calculator()
+        public CalculatorClass()
         {
-            Calculated += doAllOperations;
+            CalculateEvent += doAllOperations;
         }
 
     }
